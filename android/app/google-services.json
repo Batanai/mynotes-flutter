@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "488345886262",
+    "project_id": "mynotes-flutt-batie",
+    "storage_bucket": "mynotes-flutt-batie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488345886262:android:4818fb6a91da9ebcf20297",
+        "android_client_info": {
+          "package_name": "com.mynotes.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488345886262-fehdb0s1d8aira6751nhrpng6uq9eurj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvKPcSuVOkRKdgUhDjM_hgENX-WPtjcFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488345886262-fehdb0s1d8aira6751nhrpng6uq9eurj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "488345886262-flf6e73rpau7rsfn88qdm8ulq44smclt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mynotes.mynotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
