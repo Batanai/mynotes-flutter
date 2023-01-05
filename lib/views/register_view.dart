@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mynotes/constants/routes.dart';
+import 'package:mynotes/services/auth/auth_service.dart';
 
 import 'dart:developer' as devtools show log;
 
@@ -59,9 +60,10 @@ class _RegisterViewState extends State<RegisterView> {
               final password = _password.text;
 
               try {
-                final userCredential = await FirebaseAuth.instance
-                    .createUserWithEmailAndPassword(
-                        email: email, password: password);
+                final userCredential = await AuthService.firebase().createUser(
+                  email: email,
+                  password: password,
+                );
 
                 devtools.log(userCredential.toString());
               } on FirebaseAuthException catch (e) {
