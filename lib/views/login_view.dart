@@ -62,11 +62,16 @@ class _LoginViewState extends State<LoginView> {
                     .signInWithEmailAndPassword(
                         email: email, password: password);
 
-                print(userCredential);
+                if (userCredential != null) {
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/notes/', (route) => false);
+                }
+
+                devtools.log(userCredential.toString());
               } on FirebaseAuthException catch (e) {
-                print(e.code);
+                devtools.log(e.code);
               } catch (e) {
-                print('Something whent wrong with user sign in - $e');
+                devtools.log('Something whent wrong with user sign in - $e');
               }
             },
             child: const Text('Login'),
