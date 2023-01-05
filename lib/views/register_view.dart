@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:mynotes/constants/routes.dart';
 
-import '../firebase_options.dart';
 import 'dart:developer' as devtools show log;
+
+import 'package:mynotes/utilities/show_error_dialog.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -65,9 +66,11 @@ class _RegisterViewState extends State<RegisterView> {
                 devtools.log(userCredential.toString());
               } on FirebaseAuthException catch (e) {
                 devtools.log(e.code);
+                await showErrorDialog(context, 'Error: ${e.code}');
               } catch (e) {
                 devtools
                     .log('Something whent wrong with user registeration - $e');
+                await showErrorDialog(context, 'Error: ${e.toString()}');
               }
             },
             child: const Text('Register'),
@@ -75,7 +78,7 @@ class _RegisterViewState extends State<RegisterView> {
           TextButton(
               onPressed: () {
                 Navigator.of(context)
-                    .pushNamedAndRemoveUntil('/login/', (route) => false);
+                    .pushNamedAndRemoveUntil(loginRoute, (route) => false);
               },
               child: const Text('Registered already! Login here'))
         ],
